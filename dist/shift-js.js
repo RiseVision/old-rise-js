@@ -1783,7 +1783,7 @@ function getAddress (publicKey) {
 		temp[i] = publicKeyHash[7 - i];
 	}
 
-	var address = bignum.fromBuffer(temp).toString() + 'S';
+	var address = bignum.fromBuffer(temp).toString() + 'R';
 	return address;
 }
 
@@ -1974,7 +1974,7 @@ function getAddressFromPublicKey (publicKey) {
 	var publicKeyHash = hash.getSha256Hash(publicKey, 'hex');
 
 	var publicKeyTransform = convert.useFirstEightBufferEntriesReversed(publicKeyHash);
-	var address = bignum.fromBuffer(publicKeyTransform).toString() + 'S';
+	var address = bignum.fromBuffer(publicKeyTransform).toString() + 'R';
 
 	return address;
 }
